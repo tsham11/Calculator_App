@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-bg: #3A4663;
+  --header-input: #FFF;
+  --bigInput-bg: #181F33;
+  --form-bg: #242D44;
+  --button-bg: #EAE3DC;
+  --button-color: #434A59;
+  --button-shadow: 0px -4px 0px 0px #B3A497 inset;
+  --del-res-bg: #647198;
+  --del-res-shadow: 0px -4px 0px 0px #414E73 inset;
+  --white: #FFF;
+  --eq-bg: #D03F2F;
+  --eq-shadow: 0px -4px 0px 0px #93261A inset;
+  --toggle-hover: rgba(249, 107, 91, 1);
+  --del-res-hover: rgba(162, 178, 225, 1);
+  --eq-hover: rgba(249, 107, 91, 1);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--body-bg);
+  font-family: 'League Spartan', sans-serif;
+  padding: 30px 24px;
+}
+
+header {
+  width: 320px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  color: var(--header-input);
+  margin-right: 130px;
+}
+
+h4 {
+  color: var(--header-input);
+  margin: 26px 26px 5px 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.tgl {
+  display: flex;
+  flex-direction: column;
+  width: 71px;
+  height: 42px;
+}
+
+/* toggle labels */
+.labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--header-input);
+  font-size: 12px;
+  margin: 0 10px 5px;
+}
+
+/* toggle for switching themes */
+.toggle {
+  display: flex;
+  justify-content: space-around;
+  width: 71px;
+  height: 26px;
+  background-color: var(--form-bg);
+  border-radius: 13px;
+}
+
+.toggle input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  appearance: none;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: none;
+  top: 5px;
+  left: 0;
+  position: relative;
+}
+
+.toggle input[type="radio"]:checked {
+  background-color: var(--eq-bg);
+}
+
+.toggle input[type="radio"]:checked:hover {
+  background-color: var(--toggle-hover);
+}
+
+.toggle input[type="radio"]#two {
+  --eq-bg: #C85402;
+}
+
+.toggle input[type="radio"]#three {
+  --eq-bg: #00DED0;
+}
+
+.toggle input:hover {
+  cursor: pointer;
+}
+
+#one {
+  opacity: 1;
+}
+
+form {
+  width: 327px;
+  height: 532px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+#calc {
+  background-color: var(--bigInput-bg);
+  color: var(--header-input);
+  border: none;
+  width: 327px;
+  height: 88px;
+  border-radius: 10px;
+  text-align: right;
+  letter-spacing: -0.667px;
+  box-shadow: none;
+  padding: 0 24px;
+}
+
+.main {
+  width: 327px;
+  height: 420px;
+  border-radius: 10px;
+  background-color: var(--form-bg);
+  padding: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+input {
+  width: 60px;
+  height: 64px;
+  border-radius: 5px;
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  box-shadow: var(--button-shadow);
+  border: none;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 32px;
+  letter-spacing: -0.533px;
+  cursor: pointer;
+}
+
+/* delete and reset buttons */
+#delres {
+  background-color: var(--del-res-bg);
+  color: var(--white);
+  box-shadow: var(--del-res-shadow);
+  font-size: 20px;
+  letter-spacing: -0.333px;
+  padding: 12px auto;
+}
+
+#delres:hover {
+  background-color: var(--del-res-hover);
+}
+
+/* reset and equal buttons */
+.reseq {
+  width: 133px;
+  height: 64px;
+}
+
+/* equal button */
+#eq {
+  background-color: var(--eq-bg);
+  color: var(--white);
+  box-shadow: var(--eq-shadow);
+}
+
+#eq:hover {
+  background-color: var(--eq-hover);
+}
+
+:root:has(#two:checked) {
+  --body-bg: #E6E6E6;
+  --header-input: #36362C;
+  --bigInput-bg: rgba(238, 238, 238, 1);
+  --form-bg: rgba(210, 205, 205, 1);
+  --button-bg: rgba(229, 228, 225, 1);
+  --button-color: #36362C;
+  --button-shadow: 0px -4px 0px 0px #A79E91 inset;
+  --del-res-bg: rgba(55, 129, 135, 1);
+  --del-res-shadow: 0px -4px 0px 0px #1B6066 inset;
+  --white: #FFF;
+  --eq-bg: rgba(200, 84, 2, 1);
+  --eq-shadow: 0px -4px 0px 0px #873901 inset;
+  --toggle-hover: rgba(255, 138, 56, 1);
+  --del-res-hover: rgba(98, 181, 188, 1);
+  --eq-hover: rgba(255, 138, 56, 1);
+}
+
+:root:has(#three:checked) {
+  --body-bg: #17062A;
+  --header-input: #FFE53D;
+  --bigInput-bg: rgba(30, 9, 54, 1);
+  --form-bg: #1E0936;
+  --button-bg: rgba(51, 28, 77, 1);
+  --button-color: rgba(255, 229, 61, 1);
+  --button-shadow: 0px -4px 0px 0px #881C9E inset;
+  --del-res-bg: rgba(86, 7, 124, 1);
+  --del-res-shadow: 0px -4px 0px 0px #BE15F4 inset;
+  --white: #FFF;
+  --eq-bg: rgba(0, 222, 208, 1);
+  --eq-shadow: 0px -4px 0px 0px #6CF9F1 inset;
+  --toggle-hover: rgba(147, 255, 248, 1);
+  --del-res-hover: rgba(134, 49, 175, 1);
+  --eq-hover: rgba(147, 255, 248, 1);
+}
+
+@media screen and (min-width:992px) {
+  body {
+    padding: 96px 450px;
+  }
+
+  header {
+    width: 533px;
+    height: 42px;
+  }
+
+  h1 {
+    margin-right: 342px;
+  }
+
+  h4 {
+    margin: 24px 26px 4px 0;
+  }
+
+  form {
+    width: 540px;
+    height: 629px;
+  }
+
+  #calc {
+    width: 540px;
+    height: 128px;
+    padding-right: 32px;
+    font-size: 56px;
+    letter-spacing: -0.933px;
+  }
+
+  .main {
+    width: 540px;
+    height: 480px;
+    padding: 32px;
+    gap: 24px;
+  }
+
+  input {
+    width: 101px;
+    height: 64px;
+    border-radius: 10px;
+  }
+
+  .reseq {
+    width: 226px;
+    height: 64px;
+  }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <header>
+      <h1>calc</h1>
+      <h4>Theme</h4>
+      <div class="tgl">
+        <div class="labels">
+          <h5>1</h5>
+          <h5>2</h5>
+          <h5>3</h5>
+        </div>
+        <div class="toggle">
+          <input class="button" type="radio" name="toggle" id="one" checked />
+          <input class="button" type="radio" name="toggle" id="two" />
+          <input class="button" type="radio" name="toggle" id="three" />
+        </div>
+      </div>
+    </header>
+
+    <form name="form1">
+      <!-- This input box shows the button pressed by the user in calculator. -->
+      <input id="calc" type="text" name="answer" />
+
+      <!-- Display the calculator buttons on the screen. -->
+      <!-- onclick() function displays the numbers pressed by the user. -->
+      <div class="main">
+        <input type="button" value="7" onclick="form1.answer.value += '7' " />
+        <input type="button" value="8" onclick="form1.answer.value += '8' " />
+        <input type="button" value="9" onclick="form1.answer.value += '9' " />
+        <input
+          type="button"
+          value="DEL"
+          onclick="form1.answer.value = form1.answer.value.slice(0, -1)"
+          id="delres"
+        />
+
+        <input type="button" value="4" onclick="form1.answer.value += '4' " />
+        <input type="button" value="5" onclick="form1.answer.value += '5' " />
+        <input type="button" value="6" onclick="form1.answer.value += '6' " />
+        <input type="button" value="+" onclick="form1.answer.value += '+' " />
+
+        <input type="button" value="1" onclick="form1.answer.value += '1' " />
+        <input type="button" value="2" onclick="form1.answer.value += '2' " />
+        <input type="button" value="3" onclick="form1.answer.value += '3' " />
+        <input type="button" value="-" onclick="form1.answer.value += '-' " />
+
+        <input type="button" value="." onclick="form1.answer.value += '.' " />
+        <input type="button" value="0" onclick="form1.answer.value += '0' " />
+        <input type="button" value="/" onclick="form1.answer.value += '/' " />
+        <input type="button" value="*" onclick="form1.answer.value += '*' " />
+
+        <!-- Reset button that erases all data entered by the user. -->
+        <input
+          type="button"
+          value="RESET"
+          onclick="form1.answer.value = ' ' "
+          id="delres"
+          class="reseq"
+        />
+        <!-- '=' button, the onclick() shows the results on the calculator screen. -->
+        <input
+          type="button"
+          value="="
+          onclick="form1.answer.value = eval(form1.answer.value) "
+          id="eq"
+          class="reseq"
+        />
+      </div>
+    </form>
+
+    <script>
+      //this script is for toggle
+      var buttons = document.getElementsByClassName("button");
+      var arr = [...buttons];
+
+      arr.forEach((element, index) => {
+        element.addEventListener("click", () => {
+          element.style.opacity = "1";
+
+          arr
+            .filter(function (item) {
+              return item != element;
+            })
+            .forEach((item) => {
+              item.style.opacity = "0";
+            });
+        });
+      });
+    </script>
+  </body>
+</html>
